@@ -1,0 +1,17 @@
+<div class="poke-card col" [ngStyle]="{backgroundColor: bgColor}" (mouseenter)="toggleBg()" (mouseleave)="toggleBg()">
+    <div style="text-align:right;">
+        <button class="right btn" (click)="closeCard()" >X</button>
+    </div>
+    <img src="{{pokemon.sprite}}"/>
+    <p class="title">{{pokemon.name}}</p>
+    <p>{{pokemon.types}}</p>
+    <span *ngIf="showDetails">
+        <p>hp = {{pokemon.hp}}</p>
+        <p>attack = {{pokemon.attack}}</p>
+        <p>defense = {{pokemon.defense}}</p>
+        <p>special attack = {{pokemon.specialAttack}}</p>
+        <p>special defense = {{pokemon.specialDefense}}</p>
+        <p>speed = {{pokemon.speed}}</p>
+    </span>
+    <button class="btn btn-success" (click)="toggleDetails()">Toggle details</button>
+</div>

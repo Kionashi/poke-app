@@ -1,0 +1,16 @@
+<div class="container" style="margin-top: 2em;">
+  <div class="row" style="padding-bottom: 1em;">
+    <div class="col-10">
+      <input type="text" class="form-control" (keydown)="onKeyDown($event)" [(ngModel)]="name" placeholder="Type a pokemon name"> 
+    </div>
+    <div class="col-2">
+      <button type="button"(click)="addPokemon()" [disabled]="name==''" class="btn btn-primary">Add pokemon</button>
+    </div>
+  </div>
+  <div class="row row-cols-3">
+    <app-poke-card *ngFor="let card of pokeList; let i = index" [pokemon]="card" (closedCard)="onClosedCard(i)"> </app-poke-card>
+  </div>
+  <div class= "container" style="padding-top: 4em;">
+    <h1 *ngIf="pokeList.length === 0"> You have no pokemons yet, add a new member to your team </h1>  
+  </div>
+</div>

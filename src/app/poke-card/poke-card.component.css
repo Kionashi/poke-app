@@ -1,0 +1,10 @@
+.poke-card{
+    border: 1px solid blue;
+    padding: 20px;
+    margin:5px;
+    text-align:center;
+}
+.title {
+   font-size:24px;
+   font-weight: bold; 
+}
